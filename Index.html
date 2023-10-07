@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="Scripts/ToDoList.js" defer></script>
+    <title></title>
+</head>
+<body style="display:flex;">
+    <div id="list">
+        <div id="parent" class="task" style="display:none;">
+            <h1 class="title" style="width:fit-content"></h1>
+            <p class="text" style="width:fit-content"></p>
+            <div class="status" style="position:absolute; bottom: 7px; border-radius:5px; height: 20px; width: 100px; background-color:blue; display:flex; flex-direction:row;">
+                <input type="checkbox" class="checkbox" onchange="" />
+                <p class="text" style="margin:0px; color:white;">Done</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <form id="add" name="myForm" action="" method="GET" style="margin-left: 20px; display:flex; flex-direction:column">
+            <label>Title</label>
+            <input type="text" name="title" value="">
+            <label>Description</label>
+            <input type="text" name="description" value="">
+            <label>
+                Is completed<input type="checkbox" name="status">
+            </label>
+            <input type="button" name="button" value="Add task" onClick="tasks.push(new Task(this.form.title.value, this.form.description.value, this.form.status.checked))">
+        </form>
+        <form id="edit" name="myForm" action="" method="GET" style="margin-left: 20px; display:none; flex-direction:column">
+            <label>Title</label>
+            <input type="text" name="title" value="">
+            <label>Description</label>
+            <input type="text" name="description" value="">
+            <input type="button" name="button" value="Save"style="margin-top: 7px" onClick="">
+        </form>
+    </div>
+</body>
+</html>
